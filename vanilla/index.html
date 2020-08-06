@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components</title>
+  <script src="tooltip.js"></script>
+  <script src="confirm-link.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    :root {
+      font-family: sans-serif;
+      --color-primary: #92e0fa;
+    }
+    /* .highlight {
+      background-color: #ffd890;
+    } */
+    /* bebop-tooltip {
+      border: 1px solid blue;
+      padding: 0.15rem;
+    } */
+  </style>
+</head>
+<body>
+  <p>
+    <bebop-tooltip class="important">
+      Web Components
+    </bebop-tooltip> are awesome!
+  </p>
+  <div>
+    <bebop-tooltip text="This is an example"></bebop-tooltip>
+    <a href="https://google.com" is="bebop-confirm-link">Google</a>
+  </div>
+  <div>
+    <bebop-tooltip text="Border is shadow">
+      <span class="highlight">This is a highlight</span>
+    </bebop-tooltip>
+  </div>
+</body>
+</html>

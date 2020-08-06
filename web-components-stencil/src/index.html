@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+  <style>
+    :root {
+      --color-primary: #c4c422;
+      --color-primary-inverse: black;
+      --color-inactive: #dac5c5;
+      --color-active: #fcfc0f;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    .side-nav ul {
+      list-style: none;
+    }
+    .side-nav li {
+      margin: 1rem 0;
+    }
+    .side-nav a {
+      text-decoration: none;
+      color: black;
+    }
+    section {
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <script type="module" src="/build/web-components-stencil.esm.js"></script>
+  <script nomodule src="/build/web-components-stencil.js"></script>
+
+</head>
+<body>
+  <section>
+    <button id="open-btn">Open Side Menu</button>
+    <bebop-side-drawer id="side-drawer" title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">A Link</a></li>
+          <li><a href="/">Another Link</a></li>
+          <li><a href="/">A Third Link</a></li>
+        </ul>
+      </nav>
+    </bebop-side-drawer>
+  </section>
+  <section>
+    <bebop-stock-price></bebop-stock-price>
+    <!-- <bebop-stock-price stock-symbol="IBM"></bebop-stock-price> -->
+  </section>
+  <section>
+    <bebop-stock-finder></bebop-stock-finder>
+  </section>
+  <script>
+    const sideDrawer = document.querySelector('#side-drawer');
+    const sideButton = document.querySelector('#open-btn');
+    sideButton.addEventListener('click', () => {
+      if (!sideDrawer.opened) {
+        sideDrawer.open();
+      }
+    });
+    // const stockFinderEl = document.querySelector('bebop-stock-finder');
+    // stockFinderEl.addEventListener('bebopSymbolSelected', event => {
+    //   console.log(event);
+    // });
+  </script>
+</body>
+</html>
